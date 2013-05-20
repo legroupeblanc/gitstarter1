@@ -25,4 +25,6 @@
 		<g:javascript library="application"/>
 		<r:layoutResources />
 	</body>
-</html>
+        <li><g:link controller="moderation" action="customsave"  params="[ur : request.forwardURI]">>>Moderation</g:link></li>
+                
+                </html>
