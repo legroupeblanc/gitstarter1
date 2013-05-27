@@ -1,3 +1,5 @@
+  
+<%@ page import="sifinance.Project" %>
 <!doctype html>
 <html>
 	<head>
@@ -17,6 +19,36 @@
 				-moz-border-radius: 0.6em;
 				-webkit-border-radius: 0.6em;
 				border-radius: 0.6em;
+			}
+                        .ranked {
+				background-color: #eee;
+				border: .2em solid #fff;
+				margin: 2em 2em 1em;
+				padding: 1em;
+				width: 12em;
+				float: left;
+				-moz-box-shadow: 0px 0px 1.25em #ccc;
+				-webkit-box-shadow: 0px 0px 1.25em #ccc;
+				box-shadow: 0px 0px 1.25em #ccc;
+				-moz-border-radius: 0.6em;
+				-webkit-border-radius: 0.6em;
+				border-radius: 0.6em;
+			}
+                        .ranked ul {
+				font-size: 0.9em;
+				list-style-type: none;
+				margin-bottom: 0.6em;
+				padding: 0;
+			}
+            
+			.ranked li {
+				line-height: 1.3;
+			}
+
+			.ranked h2 {
+				text-transform: uppercase;
+				font-size: 1.1em;
+				margin: 0 0 0.3em;
 			}
 
 			.ie6 #status {
@@ -41,7 +73,7 @@
 			}
 
 			#page-body {
-				margin: 2em 1em 1.25em 18em;
+				margin-left:83px;
 			}
 
 			h2 {
@@ -55,68 +87,185 @@
 				margin: 0.25em 0;
 			}
 
-			#controller-list ul {
-				list-style-position: inside;
-			}
+                        #login {
+                                margin: 15px 0px;
+                                padding: 0px;
+                                text-align: left;
+                        }
 
-			#controller-list li {
-				line-height: 1.3;
-				list-style-position: inside;
-				margin: 0.25em 0;
-			}
+                        #login .inner {
+                                width: 400px;
+                                padding-bottom: 6px;
+                                margin: 60px auto;
+                                text-align: left;
+                                border: 1px solid #aab;
+                                background-color: #f0f0fa;
+                                -moz-box-shadow: 2px 2px 2px #eee;
+                                -webkit-box-shadow: 2px 2px 2px #eee;
+                                -khtml-box-shadow: 2px 2px 2px #eee;
+                                box-shadow: 2px 2px 2px #eee;
+                        }
 
-			@media screen and (max-width: 480px) {
-				#status {
-					display: none;
-				}
+                        #login .inner .fheader {
+                                padding: 18px 26px 14px 26px;
+                                background-color: #f7f7ff;
+                                margin: 0px 0 14px 0;
+                                color: #2e3741;
+                                font-size: 18px;
+                                font-weight: bold;
+                        }
 
-				#page-body {
-					margin: 0 1em 1em;
-				}
+                        #login .inner .cssform p {
+                                clear: left;
+                                margin: 0;
+                                
+                                padding-left: 105px;
+                                height: 1%;
+                        }
+                        #login .cssform  {
+                                margin-top: 20px;
+                                margin-left: 10px;
+                         }
+                        #login .inner .cssform input[type='text'] {
+                                width: 120px;
+                        }
 
-				#page-body h1 {
-					margin-top: 0;
-				}
-			}
+                        #login .inner .cssform label {
+                                font-weight: bold;
+                                float: left;
+                                margin-left: -105px;
+                                width: 110px;
+                                padding-top: 3px;
+                                padding-right: 10px;
+                        }
+
+                        #login #remember_me_holder {
+                                padding-left: 120px;
+                        }
+                        #login #remember_me_holder #submit{
+                          display:inline;
+                        }
+
+                        #login #submit {
+                                margin-left: 15px;
+                        }
+
+                        #login #remember_me_holder label {
+                                float: none;
+                                margin-left: 0;
+                                text-align: left;
+                                width: 200px
+                        }
+
+                        #login .inner .login_message {
+                                padding: 6px 25px 20px 25px;
+                                color: #c33;
+                        }
+
+                        #login .inner .text_ {
+                                width: 120px;
+                        }
+
+                        #login .inner .chk {
+                                height: 12px;
+                        }
+
+			
+                        .ranked{
+                          display:block !important;
+                        }
+                        #page-body #rankeds{
+                          display:block;
+                        }
 		</style>
 	</head>
 	<body>
-		<a href="#page-body" class="skip"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-		<div id="status" role="complementary">
-			<h1>Application Status</h1>
-			<ul>
-				<li>App version: <g:meta name="app.version"/></li>
-				<li>Grails version: <g:meta name="app.grails.version"/></li>
-				
-				<li>JVM version: ${System.getProperty('java.version')}</li>
-				<li>Reloading active: ${grails.util.Environment.reloadingAgentEnabled}</li>
-				<li>Controllers: ${grailsApplication.controllerClasses.size()}</li>
-				<li>Domains: ${grailsApplication.domainClasses.size()}</li>
-				<li>Services: ${grailsApplication.serviceClasses.size()}</li>
-				<li>Tag Libraries: ${grailsApplication.tagLibClasses.size()}</li>
-			</ul>
-			<h1>Installed Plugins</h1>
-			<ul>
-				<g:each var="plugin" in="${applicationContext.getBean('pluginManager').allPlugins}">
-					<li>${plugin.name} - ${plugin.version}</li>
-				</g:each>
-			</ul>
-		</div>
-		<div id="page-body" role="main">
-			<h1>Welcome to Grails</h1>
-			<p>Congratulations, you have successfully started your first Grails application! At the moment
-			   this is the default page, feel free to modify it to either redirect to a controller or display whatever
-			   content you may choose. Below is a list of controllers that are currently deployed in this application,
-			   click on each to execute its default action:</p>
+          <div id='login'>
+                  <div class='inner'>
+                          
 
-			<div id="controller-list" role="navigation">
-				<h2>Available Controllers:</h2>
+                          <g:if test='${flash.message}'>
+                                  <div class='login_message'>${flash.message}</div>
+                          </g:if>
+
+                          <form action='${postUrl}' method='POST' id='loginForm' class='cssform' autocomplete='off'>
+                                  <p>
+                                          <label for='username'><g:message code="springSecurity.login.username.label"/>:</label>
+                                          <input type='text' class='text_' name='j_username' id='username'/>
+                                  </p>
+
+                                  <p>
+                                          <label for='password'><g:message code="springSecurity.login.password.label"/>:</label>
+                                          <input type='password' class='text_' name='j_password' id='password'/>
+                                  </p>
+
+                                  <p id="remember_me_holder">
+                                          <input type='checkbox' class='chk' name='${rememberMeParameter}' id='remember_me' <g:if test='${hasCookie}'>checked='checked'</g:if>/>
+                                          <label for='remember_me'><g:message code="springSecurity.login.remember.me.label"/></label>
+                                  
+
+                                  
+                                          <input type='submit' id="submit" value='${message(code: "springSecurity.login.button")}'/>
+                                  </p>
+                          </form>
+                  </div>
+          </div>
+          <div id="rankeds">
+		<div id="page-body" class="ranked" >
+
+			<div id="Most-Founded-list"  role="navigation">
+				<h2>Most Founded:</h2>
 				<ul>
-					<g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName } }">
-						<li class="controller"><g:link controller="${c.logicalPropertyName}">${c.fullName}</g:link></li>
+					<g:each var="c" in="${Project.list(sort: "avaiableFound", order: "desc")}">
+						<li class="controller"><g:link controller="Project" action="show" id="${c.idProjet}">${c.title}</g:link></li>
 					</g:each>
 				</ul>
 			</div>
 		</div>
+                <div id="page-body2" class="ranked">
+
+			<div id="Most-Recent-list"  role="navigation">
+				<h2>Most Recent:</h2>
+				<ul>
+					<g:each var="c" in="${Project.list(sort: "creationDate", order: "asc")}">
+						<li class="controller"><g:link controller="Project" action="show" id="${c.idProjet}">${c.title}</g:link></li>
+					</g:each>
+				</ul>
+			</div>
+      
+                        
+		</div>
+                <div id="page-body2" class="ranked">
+                    <div id="Most-Popular-list"  role="navigation">
+				<h2>Most Popular:</h2>
+				<ul>
+					<g:each var="c" in="${Project.list(sort: "creationDate", order: "asc")}">
+						<li class="controller"><g:link controller="Project" action="show" id="${c.idProjet}">${c.title}</g:link></li>
+					</g:each>
+				</ul>
+                                to doo
+			</div>
+                </div>
+          </div>
+                  
+
+                <div id="page-body" role="main">
+
+                                        <div id="controller-list" role="navigation">
+                                                <h2>Available Controllers:</h2>
+                                                <ul>
+                                                        <g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName } }">
+                                                                <li class="controller"><g:link controller="${c.logicalPropertyName}">${c.fullName}</g:link></li>
+                                                        </g:each>
+                                                </ul>
+                                        </div>
+                </div>
+                <script type='text/javascript'>
+                  <!--
+                  (function() {
+                          document.forms['loginForm'].elements['j_username'].focus();
+                  })();
+                  // -->
+          </script>
 	</body>
 </html>
