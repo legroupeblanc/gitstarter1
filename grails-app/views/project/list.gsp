@@ -24,11 +24,35 @@
 				<thead>
 					<tr>
 					
+						<g:sortableColumn property="avaiableFound" title="${message(code: 'project.avaiableFound.label', default: 'Avaiable Found')}" />
+					
+						<g:sortableColumn property="creationDate" title="${message(code: 'project.creationDate.label', default: 'Creation Date')}" />
+					
+						<g:sortableColumn property="description" title="${message(code: 'project.description.label', default: 'Description')}" />
+					
+						<g:sortableColumn property="foundingDeadline" title="${message(code: 'project.foundingDeadline.label', default: 'Founding Deadline')}" />
+					
+						<g:sortableColumn property="foundingObjective" title="${message(code: 'project.foundingObjective.label', default: 'Founding Objective')}" />
+					
+						<g:sortableColumn property="idOwner" title="${message(code: 'project.idOwner.label', default: 'Id Owner')}" />
+					
 					</tr>
 				</thead>
 				<tbody>
 				<g:each in="${projectInstanceList}" status="i" var="projectInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
+					
+						<td><g:link action="show" id="${projectInstance.id}">${fieldValue(bean: projectInstance, field: "avaiableFound")}</g:link></td>
+					
+						<td><g:formatDate date="${projectInstance.creationDate}" /></td>
+					
+						<td>${fieldValue(bean: projectInstance, field: "description")}</td>
+					
+						<td><g:formatDate date="${projectInstance.foundingDeadline}" /></td>
+					
+						<td>${fieldValue(bean: projectInstance, field: "foundingObjective")}</td>
+					
+						<td>${fieldValue(bean: projectInstance, field: "idOwner")}</td>
 					
 					</tr>
 				</g:each>

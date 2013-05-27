@@ -1,18 +1,21 @@
 package sifinance
 
 class Project {
+       
+    static searchable = true 
     
- private int idProjet
- private int Utilisateur_idUtilisateur
- private int idOwner
- private String title
- private Date creationDate
- private String description
- private String projectPicture
- private float foundingObjective
- private Date foundingDeadline
- private float avaiableFound
+  int idProjet
+ int Utilisateur_idUtilisateur
+ int idOwner
+  String title
+  Date creationDate
+  String description
+  String projectPicture
+  float foundingObjective
+  Date foundingDeadline
+  float avaiableFound
  
     static constraints = {
     }
 }
+
