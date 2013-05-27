@@ -1,6 +1,52 @@
 <%@ page import="sifinance.Project" %>
+<table>
+  <tr>
+    <th> <div class="fieldcontain ${hasErrors(bean: projectInstance, field: 'title', 'error')} ">
+	<label for="title">
+		<g:message code="project.title.label" default="Title" />
+		
+	</label> 
+  </div> </th>
+  <th> <div class="fieldcontain ${hasErrors(bean: projectInstance, field: 'projectPicture', 'error')} ">
+	<label for="projectPicture">
+          
+		<g:message code="project.projectPicture.label" default="Project Picture" />
+		
+	</label>
+    </div>
+</th>
+  </tr>
+  
+  <tr>
+    <td><div class="fieldcontain ${hasErrors(bean: projectInstance, field: 'title', 'error')} ">
+	
+	<g:textField name="title" value="${projectInstance?.title}"/>
+      </div></td>
+      <td><div class="fieldcontain ${hasErrors(bean: projectInstance, field: 'projectPicture', 'error')} ">
 
+	<fieldset>
 
+  <g:form action="upload_picture" method="post" enctype="multipart/form-data">
+    <label for="picture">Project Picture </label>
+    <input type="file" name="avatar" id="avatar" />
+    <div style="font-size:0.8em; margin: 1.0em;">
+   
+    </div>
+    <input type="submit" class="buttons" value="Upload" />
+  </g:form>
+</fieldset>
+	
+</div></td>
+
+</tr>
+</table>
+<div class="fieldcontain ${hasErrors(bean: projectInstance, field: 'description', 'error')} ">
+	<label for="description">
+		<g:message code="project.description.label" default="Description" />
+		
+	</label>
+	<g:textField name="description" value="${projectInstance?.description}"/>
+</div>
 
 <div class="fieldcontain ${hasErrors(bean: projectInstance, field: 'avaiableFound', 'error')} required">
 	<label for="avaiableFound">
@@ -18,13 +64,7 @@
 	<g:datePicker name="creationDate" precision="day"  value="${projectInstance?.creationDate}"  />
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: projectInstance, field: 'description', 'error')} ">
-	<label for="description">
-		<g:message code="project.description.label" default="Description" />
-		
-	</label>
-	<g:textField name="description" value="${projectInstance?.description}"/>
-</div>
+
 
 <div class="fieldcontain ${hasErrors(bean: projectInstance, field: 'foundingDeadline', 'error')} required">
 	<label for="foundingDeadline">
@@ -42,43 +82,7 @@
 	<g:field name="foundingObjective" value="${fieldValue(bean: projectInstance, field: 'foundingObjective')}" required=""/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: projectInstance, field: 'idOwner', 'error')} required">
-	<label for="idOwner">
-		<g:message code="project.idOwner.label" default="Id Owner" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:field name="idOwner" type="number" value="${projectInstance.idOwner}" required=""/>
-</div>
 
-<div class="fieldcontain ${hasErrors(bean: projectInstance, field: 'idProjet', 'error')} required">
-	<label for="idProjet">
-		<g:message code="project.idProjet.label" default="Id Projet" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:field name="idProjet" type="number" value="${projectInstance.idProjet}" required=""/>
-</div>
 
-<div class="fieldcontain ${hasErrors(bean: projectInstance, field: 'projectPicture', 'error')} ">
-	<label for="projectPicture">
-		<g:message code="project.projectPicture.label" default="Project Picture" />
-		
-	</label>
-	<g:textField name="projectPicture" value="${projectInstance?.projectPicture}"/>
-</div>
 
-<div class="fieldcontain ${hasErrors(bean: projectInstance, field: 'title', 'error')} ">
-	<label for="title">
-		<g:message code="project.title.label" default="Title" />
-		
-	</label>
-	<g:textField name="title" value="${projectInstance?.title}"/>
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: projectInstance, field: 'utilisateur_idUtilisateur', 'error')} required">
-	<label for="utilisateur_idUtilisateur">
-		<g:message code="project.utilisateur_idUtilisateur.label" default="Utilisateurid Utilisateur" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:field name="utilisateur_idUtilisateur" type="number" value="${projectInstance.utilisateur_idUtilisateur}" required=""/>
-</div>
 
