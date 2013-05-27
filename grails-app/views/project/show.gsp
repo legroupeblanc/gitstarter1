@@ -23,6 +23,96 @@
 			</g:if>
 			<ol class="property-list project">
 			
+				<g:if test="${projectInstance?.avaiableFound}">
+				<li class="fieldcontain">
+					<span id="avaiableFound-label" class="property-label"><g:message code="project.avaiableFound.label" default="Avaiable Found" /></span>
+					
+						<span class="property-value" aria-labelledby="avaiableFound-label"><g:fieldValue bean="${projectInstance}" field="avaiableFound"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${projectInstance?.creationDate}">
+				<li class="fieldcontain">
+					<span id="creationDate-label" class="property-label"><g:message code="project.creationDate.label" default="Creation Date" /></span>
+					
+						<span class="property-value" aria-labelledby="creationDate-label"><g:formatDate date="${projectInstance?.creationDate}" /></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${projectInstance?.description}">
+				<li class="fieldcontain">
+					<span id="description-label" class="property-label"><g:message code="project.description.label" default="Description" /></span>
+					
+						<span class="property-value" aria-labelledby="description-label"><g:fieldValue bean="${projectInstance}" field="description"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${projectInstance?.foundingDeadline}">
+				<li class="fieldcontain">
+					<span id="foundingDeadline-label" class="property-label"><g:message code="project.foundingDeadline.label" default="Founding Deadline" /></span>
+					
+						<span class="property-value" aria-labelledby="foundingDeadline-label"><g:formatDate date="${projectInstance?.foundingDeadline}" /></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${projectInstance?.foundingObjective}">
+				<li class="fieldcontain">
+					<span id="foundingObjective-label" class="property-label"><g:message code="project.foundingObjective.label" default="Founding Objective" /></span>
+					
+						<span class="property-value" aria-labelledby="foundingObjective-label"><g:fieldValue bean="${projectInstance}" field="foundingObjective"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${projectInstance?.idOwner}">
+				<li class="fieldcontain">
+					<span id="idOwner-label" class="property-label"><g:message code="project.idOwner.label" default="Id Owner" /></span>
+					
+						<span class="property-value" aria-labelledby="idOwner-label"><g:fieldValue bean="${projectInstance}" field="idOwner"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${projectInstance?.idProjet}">
+				<li class="fieldcontain">
+					<span id="idProjet-label" class="property-label"><g:message code="project.idProjet.label" default="Id Projet" /></span>
+					
+						<span class="property-value" aria-labelledby="idProjet-label"><g:fieldValue bean="${projectInstance}" field="idProjet"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${projectInstance?.projectPicture}">
+				<li class="fieldcontain">
+					<span id="projectPicture-label" class="property-label"><g:message code="project.projectPicture.label" default="Project Picture" /></span>
+					
+						<span class="property-value" aria-labelledby="projectPicture-label"><g:fieldValue bean="${projectInstance}" field="projectPicture"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${projectInstance?.title}">
+				<li class="fieldcontain">
+					<span id="title-label" class="property-label"><g:message code="project.title.label" default="Title" /></span>
+					
+						<span class="property-value" aria-labelledby="title-label"><g:fieldValue bean="${projectInstance}" field="title"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${projectInstance?.utilisateur_idUtilisateur}">
+				<li class="fieldcontain">
+					<span id="utilisateur_idUtilisateur-label" class="property-label"><g:message code="project.utilisateur_idUtilisateur.label" default="Utilisateurid Utilisateur" /></span>
+					
+						<span class="property-value" aria-labelledby="utilisateur_idUtilisateur-label"><g:fieldValue bean="${projectInstance}" field="utilisateur_idUtilisateur"/></span>
+					
+				</li>
+				</g:if>
+			
 			</ol>
 			<g:form>
 				<fieldset class="buttons">
