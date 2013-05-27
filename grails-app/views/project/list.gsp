@@ -34,7 +34,7 @@
 					
 						<g:sortableColumn property="foundingObjective" title="${message(code: 'project.foundingObjective.label', default: 'Founding Objective')}" />
 					
-						<g:sortableColumn property="idOwner" title="${message(code: 'project.idOwner.label', default: 'Id Owner')}" />
+						
 					
 					</tr>
 				</thead>

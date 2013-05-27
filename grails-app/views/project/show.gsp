@@ -68,29 +68,13 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${projectInstance?.idOwner}">
-				<li class="fieldcontain">
-					<span id="idOwner-label" class="property-label"><g:message code="project.idOwner.label" default="Id Owner" /></span>
-					
-						<span class="property-value" aria-labelledby="idOwner-label"><g:fieldValue bean="${projectInstance}" field="idOwner"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${projectInstance?.idProjet}">
-				<li class="fieldcontain">
-					<span id="idProjet-label" class="property-label"><g:message code="project.idProjet.label" default="Id Projet" /></span>
-					
-						<span class="property-value" aria-labelledby="idProjet-label"><g:fieldValue bean="${projectInstance}" field="idProjet"/></span>
-					
-				</li>
-				</g:if>
+				
 			
 				<g:if test="${projectInstance?.projectPicture}">
 				<li class="fieldcontain">
-					<span id="projectPicture-label" class="property-label"><g:message code="project.projectPicture.label" default="Project Picture" /></span>
-					
-						<span class="property-value" aria-labelledby="projectPicture-label"><g:fieldValue bean="${projectInstance}" field="projectPicture"/></span>
+				<g:if test="${project.picture}">
+  <img class="avatar" src="${createLink(controller:'project', action:'project_picture', id:user.ident())}" />
+</g:if>	
 					
 				</li>
 				</g:if>

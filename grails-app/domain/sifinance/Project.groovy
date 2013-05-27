@@ -10,12 +10,15 @@ class Project {
   String title
   Date creationDate
   String description
-  String projectPicture
+  byte[] projectPicture
   float foundingObjective
   Date foundingDeadline
   float avaiableFound
+  String avatarType 
  
     static constraints = {
+    projectPicture(nullable:true, maxSize: 16384 /* 16K */)
+    avatarType(nullable:true)
     }
 }
 
