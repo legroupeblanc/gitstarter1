@@ -1,6 +1,8 @@
 package sifinance
 
 class Project {
+       
+    static searchable = true 
     
   int idProjet
  int Utilisateur_idUtilisateur
@@ -19,3 +21,4 @@ class Project {
     avatarType(nullable:true)
     }
 }
+

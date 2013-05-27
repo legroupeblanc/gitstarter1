@@ -110,7 +110,7 @@ class ProjectController {
     project.picture = f.getBytes()
   project.avatarType = f.getContentType()
   log.info("File uploaded: " + user.avatarType)
-  flash.message = "Avatar (${user.avatarType}, ${user.avatar.size()} bytes) uploaded."
+  flash.message = "Picture (${user.avatarType}, ${user.avatar.size()} bytes) uploaded."
     }
     
     def project_picture = {

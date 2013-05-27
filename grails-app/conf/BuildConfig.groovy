@@ -58,5 +58,7 @@ grails.project.dependency.resolution = {
         compile ":jquery-ui-extensions:0.5.8"
         
         compile ":jquery-ui:1.8.24"
+        
+        compile ":searchable:0.6.4"
     }
 }
