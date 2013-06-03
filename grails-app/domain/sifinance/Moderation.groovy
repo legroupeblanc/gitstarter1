@@ -6,6 +6,6 @@ class Moderation {
     String url
     
     static constraints = {
-        url blank: false, nullable: false; unique : true
+        url blank: false, nullable: false, unique : true
     }
 }
