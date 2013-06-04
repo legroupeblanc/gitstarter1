@@ -4,7 +4,7 @@
 <html>
 	<head>
 		<meta name="layout" content="main"/>
-		<title>Welcome to Grails</title>
+		<title>Welcome to GitStarter</title>
 		<style type="text/css" media="screen">
 			#status {
 				background-color: #eee;
@@ -232,8 +232,6 @@
 					</g:each>
 				</ul>
 			</div>
-      
-                        
 		</div>
                 <div id="page-body2" class="ranked">
                     <div id="Most-Popular-list"  role="navigation">
@@ -267,5 +265,7 @@
                   })();
                   // -->
           </script>
+         
+          
 	</body>
 </html>
