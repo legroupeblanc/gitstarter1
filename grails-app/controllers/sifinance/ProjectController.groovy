@@ -99,26 +99,4 @@ class ProjectController {
             redirect(action: "show", id: id)
         }
     }
-    def upload_picture={
-        def f =equest.getfile('picture')
-        def okcontents = ['image/png', 'image/jpeg', 'image/gif']
-        if (! okcontents.contains(f.getContentType())) {
-    flash.message = "the picture must be one of: ${okcontents}"
-
-    return;
-    }
-    project.picture = f.getBytes()
-  project.avatarType = f.getContentType()
-  log.info("File uploaded: " + user.avatarType)
-  flash.message = "Picture (${user.avatarType}, ${user.avatar.size()} bytes) uploaded."
-    }
-    
-    def project_picture = {
-        def projectID= Project.get(params.id)
-  response.setContentType(projectID.avatarType)
-  response.setContentLength(projectID.avatar.size())
-  OutputStream out = response.getOutputStream();
-  out.write(projectID.picture);
-  out.close();
-    }
 }

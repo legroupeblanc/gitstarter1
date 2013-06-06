@@ -216,7 +216,7 @@
 			<div id="Most-Founded-list"  role="navigation">
 				<h2>Most Founded:</h2>
 				<ul>
-					<g:each var="c" in="${Project.list(sort: "avaiableFound", order: "desc")}">
+					<g:each var="c" in="${Project.list(sort: "availableFound", order: "desc")}">
 						<li class="controller"><g:link controller="Project" action="show" id="${c.idProjet}">${c.title}</g:link></li>
 					</g:each>
 				</ul>
@@ -227,7 +227,7 @@
 			<div id="Most-Recent-list"  role="navigation">
 				<h2>Most Recent:</h2>
 				<ul>
-					<g:each var="c" in="${Project.list(sort: "creationDate", order: "asc")}">
+					<g:each var="c" in="${Project.list(sort: "fundingGoal", order: "asc")}">
 						<li class="controller"><g:link controller="Project" action="show" id="${c.idProjet}">${c.title}</g:link></li>
 					</g:each>
 				</ul>
@@ -237,7 +237,7 @@
                     <div id="Most-Popular-list"  role="navigation">
 				<h2>Most Popular:</h2>
 				<ul>
-					<g:each var="c" in="${Project.list(sort: "creationDate", order: "asc")}">
+					<g:each var="c" in="${Project.list(sort: "fundingGoal", order: "asc")}">
 						<li class="controller"><g:link controller="Project" action="show" id="${c.idProjet}">${c.title}</g:link></li>
 					</g:each>
 				</ul>

@@ -23,29 +23,27 @@
 			</g:if>
 			<ol class="property-list project">
 			
-				<g:if test="${projectInstance?.avaiableFound}">
+				<g:if test="${projectInstance?.projectPicture}">
 				<li class="fieldcontain">
-					<span id="avaiableFound-label" class="property-label"><g:message code="project.avaiableFound.label" default="Avaiable Found" /></span>
-					
-						<span class="property-value" aria-labelledby="avaiableFound-label"><g:fieldValue bean="${projectInstance}" field="avaiableFound"/></span>
+					<span id="projectPicture-label" class="property-label"><g:message code="project.projectPicture.label" default="Project Picture" /></span>
 					
 				</li>
 				</g:if>
 			
-				<g:if test="${projectInstance?.creationDate}">
+				<g:if test="${projectInstance?.pictureType}">
 				<li class="fieldcontain">
-					<span id="creationDate-label" class="property-label"><g:message code="project.creationDate.label" default="Creation Date" /></span>
+					<span id="pictureType-label" class="property-label"><g:message code="project.pictureType.label" default="Picture Type" /></span>
 					
-						<span class="property-value" aria-labelledby="creationDate-label"><g:formatDate date="${projectInstance?.creationDate}" /></span>
+						<span class="property-value" aria-labelledby="pictureType-label"><g:fieldValue bean="${projectInstance}" field="pictureType"/></span>
 					
 				</li>
 				</g:if>
 			
-				<g:if test="${projectInstance?.description}">
+				<g:if test="${projectInstance?.availableFound}">
 				<li class="fieldcontain">
-					<span id="description-label" class="property-label"><g:message code="project.description.label" default="Description" /></span>
+					<span id="availableFound-label" class="property-label"><g:message code="project.availableFound.label" default="Available Found" /></span>
 					
-						<span class="property-value" aria-labelledby="description-label"><g:fieldValue bean="${projectInstance}" field="description"/></span>
+						<span class="property-value" aria-labelledby="availableFound-label"><g:fieldValue bean="${projectInstance}" field="availableFound"/></span>
 					
 				</li>
 				</g:if>
@@ -59,40 +57,47 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${projectInstance?.foundingObjective}">
+				<g:if test="${projectInstance?.fundingDuration}">
 				<li class="fieldcontain">
-					<span id="foundingObjective-label" class="property-label"><g:message code="project.foundingObjective.label" default="Founding Objective" /></span>
+					<span id="fundingDuration-label" class="property-label"><g:message code="project.fundingDuration.label" default="Funding Duration" /></span>
 					
-						<span class="property-value" aria-labelledby="foundingObjective-label"><g:fieldValue bean="${projectInstance}" field="foundingObjective"/></span>
+						<span class="property-value" aria-labelledby="fundingDuration-label"><g:formatDate date="${projectInstance?.fundingDuration}" /></span>
 					
 				</li>
 				</g:if>
 			
-				
-			
-				<g:if test="${projectInstance?.projectPicture}">
+				<g:if test="${projectInstance?.fundingGoal}">
 				<li class="fieldcontain">
-				<g:if test="${project.picture}">
-  <img class="avatar" src="${createLink(controller:'project', action:'project_picture', id:user.ident())}" />
-</g:if>	
+					<span id="fundingGoal-label" class="property-label"><g:message code="project.fundingGoal.label" default="Funding Goal" /></span>
+					
+						<span class="property-value" aria-labelledby="fundingGoal-label"><g:fieldValue bean="${projectInstance}" field="fundingGoal"/></span>
 					
 				</li>
 				</g:if>
 			
-				<g:if test="${projectInstance?.title}">
+				<g:if test="${projectInstance?.projectLocation}">
 				<li class="fieldcontain">
-					<span id="title-label" class="property-label"><g:message code="project.title.label" default="Title" /></span>
+					<span id="projectLocation-label" class="property-label"><g:message code="project.projectLocation.label" default="Project Location" /></span>
 					
-						<span class="property-value" aria-labelledby="title-label"><g:fieldValue bean="${projectInstance}" field="title"/></span>
+						<span class="property-value" aria-labelledby="projectLocation-label"><g:fieldValue bean="${projectInstance}" field="projectLocation"/></span>
 					
 				</li>
 				</g:if>
 			
-				<g:if test="${projectInstance?.utilisateur_idUtilisateur}">
+				<g:if test="${projectInstance?.projectTitle}">
 				<li class="fieldcontain">
-					<span id="utilisateur_idUtilisateur-label" class="property-label"><g:message code="project.utilisateur_idUtilisateur.label" default="Utilisateurid Utilisateur" /></span>
+					<span id="projectTitle-label" class="property-label"><g:message code="project.projectTitle.label" default="Project Title" /></span>
 					
-						<span class="property-value" aria-labelledby="utilisateur_idUtilisateur-label"><g:fieldValue bean="${projectInstance}" field="utilisateur_idUtilisateur"/></span>
+						<span class="property-value" aria-labelledby="projectTitle-label"><g:fieldValue bean="${projectInstance}" field="projectTitle"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${projectInstance?.shortDescription}">
+				<li class="fieldcontain">
+					<span id="shortDescription-label" class="property-label"><g:message code="project.shortDescription.label" default="Short Description" /></span>
+					
+						<span class="property-value" aria-labelledby="shortDescription-label"><g:fieldValue bean="${projectInstance}" field="shortDescription"/></span>
 					
 				</li>
 				</g:if>
