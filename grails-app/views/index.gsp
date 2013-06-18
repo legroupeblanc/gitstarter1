@@ -180,36 +180,14 @@
 		</style>
 	</head>
 	<body>
-          <div id='login'>
-                  <div class='inner'>
-                          
-
-                          <g:if test='${flash.message}'>
-                                  <div class='login_message'>${flash.message}</div>
-                          </g:if>
-
-                          <form action='${postUrl}' method='POST' id='loginForm' class='cssform' autocomplete='off'>
-                                  <p>
-                                          <label for='username'><g:message code="springSecurity.login.username.label"/>:</label>
-                                          <input type='text' class='text_' name='j_username' id='username'/>
-                                  </p>
-
-                                  <p>
-                                          <label for='password'><g:message code="springSecurity.login.password.label"/>:</label>
-                                          <input type='password' class='text_' name='j_password' id='password'/>
-                                  </p>
-
-                                  <p id="remember_me_holder">
-                                          <input type='checkbox' class='chk' name='${rememberMeParameter}' id='remember_me' <g:if test='${hasCookie}'>checked='checked'</g:if>/>
-                                          <label for='remember_me'><g:message code="springSecurity.login.remember.me.label"/></label>
-                                  
-
-                                  
-                                          <input type='submit' id="submit" value='${message(code: "springSecurity.login.button")}'/>
-                                  </p>
-                          </form>
-                  </div>
-          </div>
+  <div class="nav" role="navigation">
+			<ul>
+				<li><a  href="${createLink(uri: '/Project')}">Projects</a></li>
+                                <li><a  href="${createLink(uri: '/User')}">Users</a></li>
+			                      
+                        </ul>
+		</div>
+       
           <div id="rankeds">
 		<div id="page-body" class="ranked" >
 
@@ -247,17 +225,18 @@
           </div>
                   
 
-                <div id="page-body" role="main">
-
-                                        <div id="controller-list" role="navigation">
-                                                <h2>Available Controllers:</h2>
-                                                <ul>
-                                                        <g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName } }">
-                                                                <li class="controller"><g:link controller="${c.logicalPropertyName}">${c.fullName}</g:link></li>
-                                                        </g:each>
-                                                </ul>
-                                        </div>
-                </div>
+               <sec:ifAnyGranted roles="ROLE_ADMIN">
+  <div id="controllerList" class="dialog">
+      
+                    <div id="controller-list" role="navigation">
+                            <h2>Available Controllers:</h2>
+                            <ul>
+                                    <g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName } }">
+                                            <li class="controller"><g:link controller="${c.logicalPropertyName}">${c.fullName}</g:link></li>
+                                    </g:each>
+                            </ul>
+                    </div>
+   </sec:ifAnyGranted>
                 <script type='text/javascript'>
                   <!--
                   (function() {

@@ -95,11 +95,12 @@ grails.plugins.springsecurity.userLookup.userDomainClassName = 'sifinance.User'
 grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'sifinance.UserRole'
 grails.plugins.springsecurity.authority.className = 'sifinance.Role'
 
+grails.plugins.springsecurity.securityConfigType = "Annotation"
 
-
-grails.plugins.springsecurity.securityConfigType = "InterceptUrlMap"
+/**grails.plugins.springsecurity.securityConfigType = "InterceptUrlMap"
 grails.plugins.springsecurity.interceptUrlMap = [
    '/user/**'       : ['ROLE_ADMIN'],
    '/role/**'       : ['ROLE_ADMIN'],
    '/userRole/**'   : ['ROLE_ADMIN']
 ]
+**/

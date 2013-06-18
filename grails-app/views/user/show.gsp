@@ -1,6 +1,6 @@
 
 <%@ page import="sifinance.User" %>
-<!doctype html>
+<!DOCTYPE html>
 <html>
 	<head>
 		<meta name="layout" content="main">
@@ -41,6 +41,24 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${userInstance?.fullname}">
+				<li class="fieldcontain">
+					<span id="fullname-label" class="property-label"><g:message code="user.fullname.label" default="Fullname" /></span>
+					
+						<span class="property-value" aria-labelledby="fullname-label"><g:fieldValue bean="${userInstance}" field="fullname"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${userInstance?.enabled}">
+				<li class="fieldcontain">
+					<span id="enabled-label" class="property-label"><g:message code="user.enabled.label" default="Enabled" /></span>
+					
+						<span class="property-value" aria-labelledby="enabled-label"><g:formatBoolean boolean="${userInstance?.enabled}" /></span>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${userInstance?.accountExpired}">
 				<li class="fieldcontain">
 					<span id="accountExpired-label" class="property-label"><g:message code="user.accountExpired.label" default="Account Expired" /></span>
@@ -59,11 +77,11 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${userInstance?.enabled}">
+				<g:if test="${userInstance?.email}">
 				<li class="fieldcontain">
-					<span id="enabled-label" class="property-label"><g:message code="user.enabled.label" default="Enabled" /></span>
+					<span id="email-label" class="property-label"><g:message code="user.email.label" default="Email" /></span>
 					
-						<span class="property-value" aria-labelledby="enabled-label"><g:formatBoolean boolean="${userInstance?.enabled}" /></span>
+						<span class="property-value" aria-labelledby="email-label"><g:fieldValue bean="${userInstance}" field="email"/></span>
 					
 				</li>
 				</g:if>

@@ -1,7 +1,7 @@
 package sifinance
 
 import org.springframework.dao.DataIntegrityViolationException
-
+import grails.plugins.springsecurity.Secured
 class UserController {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
@@ -9,7 +9,7 @@ class UserController {
     def index() {
         redirect(action: "list", params: params)
     }
-
+@Secured(['ROLE_ADMIN','ROLE_USER'])
     def list(Integer max) {
         params.max = Math.min(max ?: 10, 100)
         [userInstanceList: User.list(params), userInstanceTotal: User.count()]
@@ -40,7 +40,7 @@ class UserController {
 
         [userInstance: userInstance]
     }
-
+@Secured(['ROLE_ADMIN','ROLE_USER'])
     def edit(Long id) {
         def userInstance = User.get(id)
         if (!userInstance) {
@@ -51,7 +51,7 @@ class UserController {
 
         [userInstance: userInstance]
     }
-
+@Secured(['ROLE_ADMIN','ROLE_USER'])
     def update(Long id, Long version) {
         def userInstance = User.get(id)
         if (!userInstance) {
@@ -80,7 +80,7 @@ class UserController {
         flash.message = message(code: 'default.updated.message', args: [message(code: 'user.label', default: 'User'), userInstance.id])
         redirect(action: "show", id: userInstance.id)
     }
-
+@Secured(['ROLE_ADMIN','ROLE_USER'])
     def delete(Long id) {
         def userInstance = User.get(id)
         if (!userInstance) {

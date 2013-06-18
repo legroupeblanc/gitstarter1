@@ -1,7 +1,7 @@
 package sifinance
 
 import org.springframework.dao.DataIntegrityViolationException
-
+import grails.plugins.springsecurity.Secured
 class ProjectController {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
@@ -14,11 +14,11 @@ class ProjectController {
         params.max = Math.min(max ?: 10, 100)
         [projectInstanceList: Project.list(params), projectInstanceTotal: Project.count()]
     }
-
+@Secured(['ROLE_ADMIN','ROLE_USER'])
     def create() {
         [projectInstance: new Project(params)]
     }
-
+@Secured(['ROLE_ADMIN','ROLE_USER'])
     def save() {
         def projectInstance = new Project(params)
         if (!projectInstance.save(flush: true)) {
@@ -40,7 +40,7 @@ class ProjectController {
 
         [projectInstance: projectInstance]
     }
-
+@Secured(['ROLE_ADMIN','ROLE_USER'])
     def edit(Long id) {
         def projectInstance = Project.get(id)
         if (!projectInstance) {
@@ -51,7 +51,7 @@ class ProjectController {
 
         [projectInstance: projectInstance]
     }
-
+@Secured(['ROLE_ADMIN','ROLE_USER'])
     def update(Long id, Long version) {
         def projectInstance = Project.get(id)
         if (!projectInstance) {
@@ -80,7 +80,7 @@ class ProjectController {
         flash.message = message(code: 'default.updated.message', args: [message(code: 'project.label', default: 'Project'), projectInstance.id])
         redirect(action: "show", id: projectInstance.id)
     }
-
+@Secured(['ROLE_ADMIN','ROLE_USER'])
     def delete(Long id) {
         def projectInstance = Project.get(id)
         if (!projectInstance) {

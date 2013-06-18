@@ -26,15 +26,27 @@ document.getElementById("q").focus();
   </head>
   <body onload="focusQueryInput();">
     <div id="header">
+      
+       <span id='loginLink' style="margin-top:0%;position:absolute;margin-left:64%;">
+    <sec:ifLoggedIn>
+      Logged in as <sec:username/> <br>(<g:link controller='logout'>Logout</g:link>)
+    </sec:ifLoggedIn>
+    <sec:ifNotLoggedIn>
+      <a  href="${createLink(uri: '/login/')}"><g:message code="Login"/></a>
+      <a  href="${createLink(uri: '/user/create')}">Sign up</a>
+    </sec:ifNotLoggedIn>
+  </span>
+
+      
+      
       <a class="header-main"
         href="${resource(dir:'')}"><img src="${resource(dir: 'images', file: 'poney.gif')}" alt="GitStarter" style="max-width: 100px"/></a></p>
-        <div style="margin-top:-15%;position:absolute;margin-left:30%;"> 
-     <form action="/SiFinance/searchable" method="get" id="searchableForm" name="searchableForm" style="text-align : right; ">
+        <div style="margin-top:-15%;position:absolute;margin-left:20%;"> 
+         <form action="/SiFinance/searchable" method="get" id="searchableForm" name="searchableForm" style="text-align : right; ">
         <input type="text" name="q" value="" size="50" id="q" style="border-radius: 15px;"/> <input type="submit" value="Search" style="border-radius: 5px;" />
       </form>
         </div>
-      
-      </div>
+            </div>
 </div>
 <g:layoutBody/>
 <div class="footer" role="contentinfo"></div>
@@ -42,7 +54,7 @@ document.getElementById("q").focus();
 <g:javascript library="application"/>
 <r:layoutResources />
 </body>
-<li><g:link controller="moderation" action="customsave"  params="[ur : request.forwardURI]">>>Moderation</g:link></li>
+<sec:ifAnyGranted roles="ROLE_USER"><li><g:link controller="moderation" action="customsave"  params="[ur : request.forwardURI]">>>Moderation</g:link></li></sec:ifAnyGranted>
 
 
 </html>

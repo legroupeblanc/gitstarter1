@@ -34,7 +34,7 @@ grails.project.dependency.resolution = {
     dependencies {
         // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes eg.
 
-        // runtime 'mysql:mysql-connector-java:5.1.20'
+         runtime 'mysql:mysql-connector-java:5.1.20'
     }
 
     plugins {
@@ -55,10 +55,18 @@ grails.project.dependency.resolution = {
         
         compile ':spring-security-core:1.2.7.3'
         
+        compile ":spring-security-ui:0.2"
+        
+        compile ":mail:1.0.1"
+      
+        //compile ": famfamfam :1.0"
+      
         compile ":jquery-ui-extensions:0.5.8"
         
         compile ":jquery-ui:1.8.24"
         
         compile ":searchable:0.6.4"
+        
+        compile ":google-visualization:0.6.2"
     }
 }

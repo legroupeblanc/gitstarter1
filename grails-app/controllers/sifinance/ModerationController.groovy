@@ -1,24 +1,26 @@
 package sifinance
 
 import org.springframework.dao.DataIntegrityViolationException
+import grails.plugins.springsecurity.Secured
 
+@Secured(['ROLE_ADMIN','ROLE_USER'])
 class ModerationController {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
-
+@Secured(['ROLE_ADMIN'])
     def index() {
         redirect(action: "list", params: params)
     }
-
+@Secured(['ROLE_ADMIN'])
     def list(Integer max) {
         params.max = Math.min(max ?: 10, 100)
         [moderationInstanceList: Moderation.list(params), moderationInstanceTotal: Moderation.count()]
     }
-
+@Secured(['ROLE_ADMIN'])
     def create() {
         [moderationInstance: new Moderation(params)]
     }
-
+@Secured(['ROLE_ADMIN'])
     def save() {
         def moderationInstance = new Moderation(params)
         if (!moderationInstance.save(flush: true)) {
@@ -29,7 +31,7 @@ class ModerationController {
         flash.message = message(code: 'default.created.message', args: [message(code: 'moderation.label', default: 'Moderation'), moderationInstance.id])
         redirect(action: "show", id: moderationInstance.id)
     }
-
+@Secured(['ROLE_ADMIN'])
     def show(Long id) {
         def moderationInstance = Moderation.get(id)
         if (!moderationInstance) {
@@ -40,7 +42,7 @@ class ModerationController {
 
         [moderationInstance: moderationInstance]
     }
-
+@Secured(['ROLE_ADMIN'])
     def edit(Long id) {
         def moderationInstance = Moderation.get(id)
         if (!moderationInstance) {
@@ -51,7 +53,7 @@ class ModerationController {
 
         [moderationInstance: moderationInstance]
     }
-
+@Secured(['ROLE_ADMIN'])
     def update(Long id, Long version) {
         def moderationInstance = Moderation.get(id)
         if (!moderationInstance) {
@@ -80,7 +82,7 @@ class ModerationController {
         flash.message = message(code: 'default.updated.message', args: [message(code: 'moderation.label', default: 'Moderation'), moderationInstance.id])
         redirect(action: "show", id: moderationInstance.id)
     }
-
+@Secured(['ROLE_ADMIN'])
     def delete(Long id) {
         def moderationInstance = Moderation.get(id)
         if (!moderationInstance) {
@@ -100,7 +102,7 @@ class ModerationController {
         }
     }
     
-    
+@Secured(['ROLE_ADMIN','ROLE_USER'])
      def customsave() {
         
         params.url = params.ur
